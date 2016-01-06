@@ -6,7 +6,7 @@ $(function(){
 
 
 String.prototype.toHHMMSS = function () {
-    var sec_num = parseInt(this, 10); // don't forget the second param
+    var sec_num = parseInt(this, 10); 
     var hours   = Math.floor(sec_num / 3600);
     var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
     var seconds = sec_num - (hours * 3600) - (minutes * 60);
@@ -20,8 +20,8 @@ String.prototype.toHHMMSS = function () {
 
 var buttonClick = function(){
   console.log('test')
-  $('#test').on('click', function(event){
-    localStorage.clear();
+  $('#dashboard').on('click', function(event){
+    chrome.tabs.create({url: 'dashboard.html'})
   })
 }
 
@@ -43,6 +43,5 @@ var site = function(){
 
 var time = function(){
   var seconds = chrome.extension.getBackgroundPage().storage[site()];
-  console.log(seconds)
   return seconds.toString().toHHMMSS();
 }

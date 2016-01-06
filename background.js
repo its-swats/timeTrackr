@@ -6,7 +6,7 @@ setInterval(function(){
     if (!!storage[site] == false) {
       storage[site] = 1
     } else {
-      count = parseInt(storage[site]) + 1
+      var count = parseInt(storage[site]) + 1
       storage[site] = count
     };
   });
