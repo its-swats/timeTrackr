@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "Time Wasted",
+  "name": "timeTrackr",
   "description": "This extension will let you know how much time you spend on individual websites.",
   "version": "1.0",
 
