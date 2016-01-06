@@ -21,7 +21,7 @@ String.prototype.toHHMMSS = function () {
 var buttonClick = function(){
   console.log('test')
   $('#test').on('click', function(event){
-    console.log("3489".toHHMMSS());
+    localStorage.clear();
   })
 }
 
@@ -42,6 +42,7 @@ var site = function(){
 }
 
 var time = function(){
-  var seconds = chrome.extension.getBackgroundPage().siteTimes[site()].toString();
-  return seconds.toHHMMSS();
+  var seconds = chrome.extension.getBackgroundPage().storage[site()];
+  console.log(seconds)
+  return seconds.toString().toHHMMSS();
 }
