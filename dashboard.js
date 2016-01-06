@@ -7,7 +7,7 @@ var createTable = function(){
   var sorted = _(data).sortBy(function(array){
     return parseInt(-array[1])
   })
-  _.each(sorted, function(array){
+  _.each(sorted.slice(0,10), function(array){
     $('#table').append("<tr><td>" + array[0] + "</td><td>" + array[1].toHHMMSS() + "</tr>");
   })
 }
