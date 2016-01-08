@@ -1,3 +1,16 @@
 .center {
   text-align: center;
 }
+
+.fixed-width {
+    width: 15em;
+}
+
+.hidden {
+    display: none;
+}
+
+.debug {
+    box-sizing: border-box;
+    outline: 1px solid black;
+}
