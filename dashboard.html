@@ -3,7 +3,7 @@
   <title>timeTrackr</title>
   <script src='jquery-2.1.4.min.js'></script>
   <script src='underscore-min.js'></script> 
-  <script src='Chart.min.js'></script>
+  <script src="highcharts.js"></script>
   <script src='dashboard.js'></script>
   <link rel='stylesheet' type='text/css' href='milligram.min.css'>
   <link rel='stylesheet' type='text/css' href='dash.css'>
@@ -39,12 +39,8 @@
         <h1>Dashboard</h1>
       </div>
     </div>
-    <div class='row'>
-      <div class='column debug'>1</div>
-      <div class='column column-50 debug'>
-        <canvas id="myChart" width="400" height="400"></canvas>
-      </div>
-      <div class='column debug'>3</div>
+    <div class='row'>  
+      <div id="container" class='column center' style="width:400px; height:400px;"></div>
     </div>
     <div class='row'>
       <div class='column center'>

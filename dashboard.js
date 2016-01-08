@@ -2,7 +2,10 @@ $(function(){
   createTable();
   resetDataHandler();
   toggleMetrics();
+  prepGraph();
   deleteLineItem();
+  highCharts();
+
 })
 
 var createTable = function(){
@@ -53,4 +56,38 @@ var deleteLineItem = function(){
     $(this).parent().parent().remove();
     delete localStorage[kill];
   })
+}
+
+var highCharts = function() {
+  // debugger;
+  
+  $('#container').highcharts({
+    chart: {
+      type: 'pie'
+    },
+    title: {
+      text: 'Time Spent'
+    },
+    series: [{
+      // name: test(),
+      data: datas 
+    }]  
+  });
+}
+
+
+var prepGraph = function(){
+  datas = []
+  var data = (_.pairs(localStorage))
+  var sorted = _(data).sortBy(function(array){
+    return parseInt(-array[1])
+  })
+    
+  _.each(sorted, function(site){
+    datas.push({"name": site[0], "data": parseInt(site[1])})
+  })
+
+  $.each(datas, function (i, point) {
+    point.y = point.data;
+  });
 }
