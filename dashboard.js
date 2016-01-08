@@ -5,7 +5,6 @@ $(function(){
   prepGraph();
   deleteLineItem();
   highCharts();
-
 })
 
 var createTable = function(){
@@ -59,18 +58,18 @@ var deleteLineItem = function(){
 }
 
 var highCharts = function() {
-  // debugger;
-  
-  $('#container').highcharts({
+  $('#highChart').highcharts({
     chart: {
       type: 'pie'
     },
     title: {
       text: 'Time Spent'
     },
+    tooltip: {
+      enabled: false
+    },
     series: [{
-      // name: test(),
-      data: datas 
+      data: datas
     }]  
   });
 }
@@ -83,7 +82,7 @@ var prepGraph = function(){
     return parseInt(-array[1])
   })
     
-  _.each(sorted, function(site){
+  _.each(sorted.slice(0,15), function(site){
     datas.push({"name": site[0], "data": parseInt(site[1])})
   })
 
